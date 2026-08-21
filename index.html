@@ -30,6 +30,32 @@
     .cta{padding:88px 0;background:linear-gradient(135deg,#f7f1e3,#fff);border-top:1px solid #eee6d5;border-bottom:1px solid #eee6d5}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}.cta h2{margin-bottom:8px}.cta p{margin:0;color:var(--muted)}
     footer{background:#06172f;color:rgba(255,255,255,.65);padding:60px 0 25px}.footer-grid{display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:50px;padding-bottom:50px}.footer-logo{width:190px;background:#fff;border-radius:10px;padding:8px;margin-bottom:20px}footer p{font-size:13px;max-width:380px}footer h4{color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.13em;margin:5px 0 18px}.footer-links{display:grid;gap:10px;font-size:13px}.footer-links a:hover{color:var(--gold-light)}.copyright{border-top:1px solid rgba(255,255,255,.09);padding-top:22px;font-size:11px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+
+    /* Theme system */
+    body, header, .hero, .section, .focus-card, .speaker-card, .team-card, .event-panel, .community-card, .btn-secondary, .menu, .hero-card, .cta, footer, .nav-links { transition:background-color .28s ease,color .28s ease,border-color .28s ease,box-shadow .28s ease; }
+    .theme-toggle{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:var(--white);color:var(--navy);cursor:pointer;font:700 12px/1 "DM Sans",sans-serif;box-shadow:0 5px 16px rgba(7,29,59,.07);white-space:nowrap;transition:all .2s ease}
+    .theme-toggle:hover{border-color:rgba(200,148,40,.55);transform:translateY(-1px)}
+    .theme-toggle .theme-icon{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:rgba(200,148,40,.12);color:var(--gold);font-size:12px}
+    .theme-toggle .theme-label{font-size:11px;letter-spacing:.02em}
+    html[data-theme="dark"]{--ink:#edf2f8;--muted:#a9b5c5;--paper:#0b1627;--white:#101f33;--line:#22334a;--shadow:0 24px 70px rgba(0,0,0,.28)}
+    html[data-theme="dark"] body{background:var(--paper);color:var(--ink)}
+    html[data-theme="dark"] header{background:rgba(11,22,39,.88);border-bottom-color:rgba(255,255,255,.08)}
+    html[data-theme="dark"] .nav-links{color:#d6dfeb}
+    html[data-theme="dark"] .nav-cta{background:#fff;color:var(--navy)!important}
+    html[data-theme="dark"] .theme-toggle{background:#12243a;color:#f2f6fb;border-color:#2b4058}
+    html[data-theme="dark"] .hero{background:radial-gradient(circle at 82% 25%,rgba(200,148,40,.13),transparent 27%),radial-gradient(circle at 8% 90%,rgba(226,179,78,.05),transparent 30%),linear-gradient(180deg,#0b1627 0%,#0f1d30 100%)}
+    html[data-theme="dark"] h1,html[data-theme="dark"] h2,html[data-theme="dark"] .about-statement,html[data-theme="dark"] .focus-card h3,html[data-theme="dark"] .speaker-body h3,html[data-theme="dark"] .team-body h3,html[data-theme="dark"] .event-panel h3,html[data-theme="dark"] .community-card h3{color:#f5f8fc}
+    html[data-theme="dark"] .hero-card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08)}
+    html[data-theme="dark"] .focus-card,html[data-theme="dark"] .speaker-card,html[data-theme="dark"] .team-card,html[data-theme="dark"] .event-panel,html[data-theme="dark"] .community-card{background:#101f33;border-color:#22334a}
+    html[data-theme="dark"] .btn-secondary{background:#12243a;border-color:#2b4058;color:#f2f6fb}
+    html[data-theme="dark"] .speakers,html[data-theme="dark"] #past-events{background:#0e1a2b!important}
+    html[data-theme="dark"] .team-section{background:#0b1627}
+    html[data-theme="dark"] .cta{background:linear-gradient(135deg,#211b0d,#132033);border-color:#3b321e}
+    html[data-theme="dark"] .community-card.dark{background:#071d3b;border-color:#173456}
+    html[data-theme="dark"] .menu{background:#12243a;border-color:#2b4058}
+    html[data-theme="dark"] .menu span,html[data-theme="dark"] .menu::before,html[data-theme="dark"] .menu::after{background:#f5f8fc}
+    @media(max-width:680px){.theme-toggle{width:100%;justify-content:center;margin-top:6px;height:40px}}
+
     @media(max-width:900px){.page-links{display:none}.past-grid{grid-template-columns:repeat(2,1fr)}.hero-grid,.about-grid,.event-grid{grid-template-columns:1fr}.hero{padding-top:65px}.hero-card{max-width:650px}.focus-grid,.speaker-grid,.team-grid{grid-template-columns:repeat(2,1fr)}.speaker-intro{display:block}.speaker-note{text-align:left;margin-top:10px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>:first-child{grid-column:1/-1}}
     @media(max-width:680px){.past-grid{grid-template-columns:1fr}.container{width:min(100% - 28px,1160px)}.nav-links{display:none;position:absolute;left:14px;right:14px;top:72px;background:#fff;padding:18px;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.nav-links.open{display:flex}.nav-links a{padding:9px 5px}.menu{display:block}.brand img{width:145px}.hero{min-height:auto;padding:60px 0 70px}h1{font-size:clamp(42px,13vw,62px)}.hero-copy{font-size:16px}.hero-card-inner{min-height:390px;padding:28px}.hero-event-title{font-size:27px}.section{padding:75px 0}.focus-grid,.speaker-grid,.team-grid,.community-grid,.event-details{grid-template-columns:1fr}.community-card{min-height:auto}.cta-inner{display:block}.cta .actions{margin-top:25px}.footer-grid{grid-template-columns:1fr}.footer-grid>:first-child{grid-column:auto}.copyright{display:block}.copyright span{display:block;margin-top:7px}}
   </style>
@@ -41,6 +67,7 @@
     <button class="menu" aria-label="Open navigation" aria-expanded="false"></button>
     <div class="nav-links">
       <a href="#about">About</a><a href="#team">Team</a><a href="#focus">Focus Areas</a><a href="#events">Events</a><a href="#community">Community</a><span class="page-links"></span>
+      <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch to dark mode" title="Switch theme"><span class="theme-icon" id="themeIcon">☾</span><span class="theme-label" id="themeLabel">Dark mode</span></button>
       <a class="nav-cta" href="https://tinyurl.com/QACon-Africa" target="_blank" rel="noopener">RSVP for the upcoming event</a>
     </div>
   </nav></div></header>
@@ -111,6 +138,11 @@
   </div><div class="copyright"><span>© 2026 QA Connect Africa. All rights reserved.</span><span>Connect · Learn · Grow · Excel</span></div></div></footer>
 
   <script>
+    const root=document.documentElement,themeToggle=document.getElementById('themeToggle'),themeIcon=document.getElementById('themeIcon'),themeLabel=document.getElementById('themeLabel');
+    function applyTheme(theme){root.setAttribute('data-theme',theme);const dark=theme==='dark';themeIcon.textContent=dark?'☀':'☾';themeLabel.textContent=dark?'Light mode':'Dark mode';themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');themeToggle.setAttribute('title',dark?'Switch to light mode':'Switch to dark mode');const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=dark?'#0b1627':'#071d3b'}
+    let savedTheme=null;try{savedTheme=localStorage.getItem('qa-connect-theme')}catch(e){}const preferred=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';applyTheme(savedTheme||preferred);
+    themeToggle.addEventListener('click',()=>{const next=root.getAttribute('data-theme')==='dark'?'light':'dark';applyTheme(next);try{localStorage.setItem('qa-connect-theme',next)}catch(e){}});
+
     const menu=document.querySelector('.menu'),navLinks=document.querySelector('.nav-links');
     menu.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menu.setAttribute('aria-expanded',open?'true':'false')});
     document.querySelectorAll('.nav-links a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
